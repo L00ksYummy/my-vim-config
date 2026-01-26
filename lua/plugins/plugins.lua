@@ -35,10 +35,11 @@ return{
 		},
 	},
 
+
     -- colorscheme --
 	'ribru17/bamboo.nvim',
 	lazy = false,
-	priority = 1000,
+    priority = 1000,
 	config = function()
 		require('bamboo').setup {
 			-- optional configuration here
@@ -46,6 +47,16 @@ return{
 		}
 		require('bamboo').load()
 	end,
+
+    'windwp/nvim-autopairs',
+    name = 'nvim-autopairs',
+    event = 'InsertEnter',
+    config = function()
+        require('nvim-autopairs').setup({
+            fast_wrap = {},
+        })
+    end,
+
 
     -- treesitter --
 	'nvim-treesitter/nvim-treesitter',
@@ -69,7 +80,5 @@ return{
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
-
-
 }
 

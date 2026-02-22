@@ -10,6 +10,7 @@ return {
       },
 
       sources = {
+          { name = 'cmp_gl' },
         { name = 'luasnip' },
         -- more sources
       },

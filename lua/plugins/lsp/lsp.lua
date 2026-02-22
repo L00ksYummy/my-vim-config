@@ -46,5 +46,20 @@ vim.lsp.config('lua_ls', {
     },
 })
 
+vim.lsp.config('glsl_analzer', {
+    cmd = { 'glsl_analzer' },
+    filetypes = { 'glsl', 'vert', 'frag', 'vs', 'fs', 'gs' },
+    root_markers = { '.git' }
+})
+
 -- After defining all configs, you need to enable the desired servers:
-vim.lsp.enable({'lua_ls', 'ts_ls', 'html', 'cssls', 'clangd', 'jdtls'})
+vim.lsp.enable({'lua_ls', 'ts_ls', 'html', 'cssls', 'clangd', 'jdtls', 'glsl_analzer'})
+
+vim.filetypes.add({
+    extension = {
+        vert = 'glsl',
+        frag = 'glsl',
+        vs = 'glsl',
+        fs = 'glsl',
+    },
+})
